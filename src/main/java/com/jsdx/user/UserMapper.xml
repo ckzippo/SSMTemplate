@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jsdx.user.mapper">
+
+    <resultMap id="UserMap" type="com.jsdx.user.User">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+        <result column="email" property="email" jdbcType="VARCHAR" />
+        <result column="create_user_id" property="createUserId" jdbcType="INTEGER" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="del_flag" property="delFlag" jdbcType="INTEGER" />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id, user_name, password, mobile, email, create_time, create_user_id, del_flag
+    </sql>
+
+    <insert id="insert" parameterType="com.jsdx.user.User">
+        insert into sys_user ( <include refid="Base_Column_List"/> )
+        values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+                #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+                #{createUserId,jdbcType=INTEGER}, #{delFlag,jdbcType=INTEGER})
+    </insert>
+
+    <update id="update" parameterType="com.jsdx.user.User">
+        update sys_user
+        <set>
+            user_name = #{userName,jdbcType=VARCHAR},
+            password = #{password,jdbcType=VARCHAR},
+            mobile = #{mobile,jdbcType=VARCHAR},
+            email = #{email,jdbcType=VARCHAR},
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from sys_user where id = #{id,jdbcType=INTEGER}
+    </delete>
+
+    <select id="selectParam" resultMap="UserMap">
+        select
+        <include refid="Base_Column_List" />
+        from sys_user where del_flag = 0
+    </select>
+
+    <select id="countParam" resultType="java.lang.Integer">
+        select count(*) from sys_user where del_flag = 0
+    </select>
+
+    <select id="selectPk" parameterType="java.lang.Integer" resultMap="UserMap">
+        select * from sys_user where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="select" resultMap="UserMap">
+        select
+        <include refid="Base_Column_List" />
+        from sys_user where del_flag = 0
+    </select>
+
+</mapper>
