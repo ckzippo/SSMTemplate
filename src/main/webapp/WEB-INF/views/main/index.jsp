@@ -10,7 +10,7 @@
 
     <div class="tpl-page-container tpl-page-header-fixed">
 
-        <jsp:include page="left_admin.jsp"></jsp:include>
+        <jsp:include page="left.jsp"></jsp:include>
 
         <div class="tpl-content-wrapper">
             <div class="tpl-content-scope">

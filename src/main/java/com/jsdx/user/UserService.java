@@ -4,7 +4,7 @@ import com.jsdx.base.BaseService;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by Max on 2016/10/18.
+ * @author ckzippo
  */
 @Service
 public class UserService extends BaseService<User, Integer>{

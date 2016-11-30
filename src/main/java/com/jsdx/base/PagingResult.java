@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PagingResult<T> {
+
     private int currentPage;
     private int pageSize;
     private int totalSize;

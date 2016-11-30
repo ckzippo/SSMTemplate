@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Max on 2016/10/17.
+ * @author ckzippo
  */
 @Controller
 public class UserController extends BaseController {

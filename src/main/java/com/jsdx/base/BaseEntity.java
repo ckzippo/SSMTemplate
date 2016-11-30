@@ -3,8 +3,10 @@ package com.jsdx.base;
 import java.util.Date;
 
 /**
- * Created by Max on 2016/10/27.
+ * 基础实体类
+ * @author ckzippo
  */
+
 public class BaseEntity {
 
     private Integer id;

@@ -14,7 +14,7 @@
 
 <div class="tpl-page-container tpl-page-header-fixed">
 
-    <jsp:include page="../main/left_admin.jsp"></jsp:include>
+    <jsp:include page="../main/left.jsp"></jsp:include>
 
     <div class="tpl-content-wrapper">
 

@@ -15,6 +15,7 @@ import java.util.Map;
 /**
  * @param <T>
  * @param <PK>
+ * @author ckzippo
  */
 public class BaseDao<T extends BaseEntity, PK extends Serializable> extends SqlSessionDaoSupport {
 
@@ -36,10 +37,10 @@ public class BaseDao<T extends BaseEntity, PK extends Serializable> extends SqlS
     public static final String SQLID_COUNT = "count";
     public static final String SQLID_COUNT_PARAM = "countParam";
 
-    public BaseDao(){
-        ParameterizedType g_type=(ParameterizedType)getClass().getGenericSuperclass();
-        Class <T> entityClass = (Class <T>) g_type.getActualTypeArguments()[0];
-        this.namespace=entityClass.getPackage().getName()+".mapper";
+    public BaseDao() {
+        ParameterizedType g_type = (ParameterizedType) getClass().getGenericSuperclass();
+        Class<T> entityClass = (Class<T>) g_type.getActualTypeArguments()[0];
+        this.namespace = entityClass.getPackage().getName() + ".mapper";
     }
 
     @Resource(name = "sqlSessionTemplate")

@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by Max on 2016/10/18.
+ * @author ckzippo
  */
 public class BaseService<T extends BaseEntity, PK extends Serializable> {
 
@@ -14,30 +14,18 @@ public class BaseService<T extends BaseEntity, PK extends Serializable> {
     private BaseDao<T, PK> dao;
 
     public boolean insert(T entity) {
-        int result = dao.insert(entity);
-        if (result == 0)
-            return false;
-        else
-            return true;
+        return dao.insert(entity) == 0 ? false : true;
     }
 
     public boolean delete(PK primaryKey) {
-        int result = dao.delete(primaryKey);
-        if (result == 0)
-            return false;
-        else
-            return true;
+        return dao.delete(primaryKey) == 0 ? false : true;
     }
 
     public boolean update(T entity) {
-        int result = dao.update(entity);
-        if (result == 0)
-            return false;
-        else
-            return true;
+        return dao.update(entity) == 0 ? false : true;
     }
 
-    public T get(PK primaryKey){
+    public T get(PK primaryKey) {
         return dao.get(primaryKey);
     }
 

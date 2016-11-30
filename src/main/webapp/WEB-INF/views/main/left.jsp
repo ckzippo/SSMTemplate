@@ -28,7 +28,7 @@
             <li class="tpl-left-nav-item">
                 <a class="nav-link tpl-left-nav-link-list">
                     <i class="am-icon-star"></i>
-                    <span>公众号管理</span>
+                    <span>统计分析</span>
                     <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                 </a>
                 <ul class="tpl-left-nav-sub-menu">
@@ -36,6 +36,25 @@
                         <a href="table-font-list.html">
                             <i class="am-icon-weixin"></i>
                             <span>公众号</span>
+                        </a>
+                        <a href="table-font-list.html">
+                            <i class="am-icon-line-chart"></i>
+                            <span>统计分析</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="tpl-left-nav-item">
+                <a class="nav-link tpl-left-nav-link-list">
+                    <i class="am-icon-file"></i>
+                    <span>文件处理</span>
+                    <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                </a>
+                <ul class="tpl-left-nav-sub-menu">
+                    <li>
+                        <a href="table-font-list.html">
+                            <i class="am-icon-file-image-o"></i>
+                            <span>文件上传</span>
                         </a>
                         <a href="table-font-list.html">
                             <i class="am-icon-line-chart"></i>
